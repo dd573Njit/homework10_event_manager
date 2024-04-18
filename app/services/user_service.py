@@ -1,4 +1,3 @@
-from builtins import Exception, bool, classmethod, int, str
 from datetime import datetime, timezone
 from typing import Optional, Dict, List
 from pydantic import ValidationError
@@ -71,6 +70,10 @@ class UserService:
 
             if 'password' in validated_data:
                 validated_data['hashed_password'] = hash_password(validated_data.pop('password'))
+
+            if 'profile_picture_url' in validated_data:
+                validated_data['profile_picture_url'] = str(validated_data['profile_picture_url'])
+
             query = update(User).where(User.id == user_id).values(**validated_data).execution_options(synchronize_session="fetch")
             await cls._execute_query(session, query)
             updated_user = await cls.get_by_id(session, user_id)
