@@ -48,7 +48,7 @@ jobs:
       - name: Run tests with Pytest
         env:
           DATABASE_URL: postgresql+asyncpg://user:password@localhost:5432/myappdb  # Configure the DATABASE_URL environment variable for tests
-        run: pytest --cov .
+        run: pytest
 
   build-and-push-docker:
     needs: test
@@ -72,7 +72,7 @@ jobs:
           push: true
           tags: dd573/devops_demo_assignment:${{ github.sha }} # Uses the Git SHA for tagging
           platforms: linux/amd64,linux/arm64 # Multi-platform support
-          cache-from: type=registry,ref=kaw393939/wis_club_api:cache:cache
+          cache-from: type=registry,ref=kaw393939/wis_club_api:cache
           cache-to: type=inline,mode=max
           
       - name: Scan the Docker image
