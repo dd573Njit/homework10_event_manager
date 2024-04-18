@@ -69,6 +69,17 @@ async def test_login_success(async_client, user):
     assert response.json()["token_type"] == "bearer"
 
 @pytest.mark.asyncio
+async def test_register_user_duplicate_email(async_client, user):
+    user_data = {
+        "username": "UniqueUsername",
+        "email": user.email,
+        "password": "AnotherPassword123!",
+    }
+    response = await async_client.post("/register/", json=user_data)
+    assert response.status_code == 400
+    assert "Username already exists" in response.json().get("detail", "")
+
+@pytest.mark.asyncio
 async def test_create_user_duplicate_username(async_client, user):
     user_data = {
         "username": user.username,
@@ -115,4 +126,3 @@ async def test_delete_user_does_not_exist(async_client, token):
     headers = {"Authorization": f"Bearer {token}"}
     delete_response = await async_client.delete(f"/users/{non_existent_user_id}", headers=headers)
     assert delete_response.status_code == 404
-
