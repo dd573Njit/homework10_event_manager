@@ -119,3 +119,9 @@ If you have any questions or need assistance, don't hesitate to reach out to you
 Once again, welcome to the Event Manager Company! Let's embark on this exciting journey together and create something remarkable.
 
 Happy coding and happy learning!
+
+https://github.com/dd573Njit/homework10_event_manager/pull/1
+https://github.com/dd573Njit/homework10_event_manager/pull/2
+https://github.com/dd573Njit/homework10_event_manager/pull/3
+https://github.com/dd573Njit/homework10_event_manager/pull/4
+https://github.com/dd573Njit/homework10_event_manager/pull/5
