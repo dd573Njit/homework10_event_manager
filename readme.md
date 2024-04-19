@@ -12,7 +12,7 @@
 - [Screenshot](SS/CoverageSS.png)
 
 ## DockerSS
-- [Screenshot](SS/DockerSS.png)
+- [Screenshot](SS/DockerSS2.png)
 
 ## Reflcection
 - During my "Event Manager" assignment, one significant challenge I encountered was identifying errors in the code, akin to searching for a needle in a haystack. However, each mistake I uncovered was a revelatory moment, illuminating the path forward much like solving a puzzle; once the first piece clicked into place, the subsequent ones followed more naturally.
